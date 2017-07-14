@@ -6,11 +6,15 @@ const PLACEHOLDER_IMAGE = 'https://hlfppt.org/wp-content/uploads/2017/04/placeho
 
 export default class Util {
     static getArtists (artists) {
-      const artist = artists.items.filter((item) => {
-        return item.images.height === item.images.width;
+    const array = artists.items.filter((item) => {
+      let square_image_array = item.images.filter((img) => {
+        return img.height === img.width;
       });
 
-    return artist.map((item) => {
+      return square_image_array.length > 0;
+    });
+
+    return array.map((item) => {
       const image = item.images[0];
 
       const image_url = image ? image.url : PLACEHOLDER_IMAGE;
