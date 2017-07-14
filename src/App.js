@@ -113,7 +113,7 @@ class App extends Component {
                     <button
                         onClick={this
                         ._login
-                        .bind(this)}>Hello</button>
+                        .bind(this)}>Login</button>
                 </div>
             );
         }
